@@ -1,0 +1,150 @@
+/* Ensure the parent container is positioned relative for absolute positioning */
+.section-container {
+   
+   
+    /*padding-bottom: 200px;*/ /* Ensure space for the box-container */
+    width: auto;
+    box-sizing: border-box; /* Include padding in width calculations */
+    /*background:black;*/
+    
+}
+
+/* Center-align and adjust positioning for the box-container */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust alignment */
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Max width for larger screens */
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgb(2,0,25);
+    background: linear-gradient(90deg, rgba(2,0,25,1) 19%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0; /* Adjust to be at the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center-align horizontally */
+    margin: 0 20px; /* Ensure some margin from the edges */
+}
+
+/* Style for box images */
+.box-image {
+    width: calc(25% - 10px); /* Adjust to fit 4 images in a row */
+    height: auto; /* Maintain aspect ratio */
+    max-height:360px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+/* Flex container for Join Our Crew section */
+.content-container {
+    display: flex;
+    flex-direction: column; /* Stack vertically on smaller screens */
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Flex items for Join Our Crew section */
+.content-item {
+    display: flex;
+    flex-direction: row; /* Side-by-side on larger screens */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto;
+    box-sizing: border-box; /* Include margin in width calculations */
+}
+
+/* Image styling for content */
+.photo-image {
+    flex: 1; /* Take equal space with content */
+    max-width: 50%; /* Half width for image */
+    height: 350px; /* Maintain aspect ratio */
+    border-radius: 7px;
+    margin-right: 20px; /* Space between image and content */
+}
+
+/* Text content styling */
+.text-content {
+    flex: 1; /* Take equal space with image */
+    padding: 20px;
+    color: #0033a0;
+    max-width: 50%;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Heading styling */
+.heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Border styling */
+.border-style {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #00f, #0077ff);
+    border-image-slice: 1;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.button {
+    padding: 10px 20px;
+    background-color: #0033a0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    background: rgb(2,0,25);
+    background: linear-gradient(90deg, rgba(2,0,25,1) 19%, rgba(0,0,0,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .box-container {
+        width: calc(100% - 370px); /* Full width minus margins */
+        bottom: 0; /* Adjust to bottom */
+        justify-content: space-around; /* Space images evenly */
+        margin: 20px; /* Margin from the edges */
+    }
+    .photo-image {
+         /* Full width on smaller screens */
+        max-height: 360px;
+    }
+    .box-image {
+        width: calc(33.33% - 10px); /* Adjust to fit 3 images in a row */
+       
+        }
+}
+
+@media (max-width: 768px) {
+    .content-item {
+        flex-direction: column; /* Stack vertically on smaller screens */
+        text-align: center;
+    }
+
+    .photo-image {
+        margin-right: 0; /* Remove margin on smaller screens */
+        margin-bottom: 20px; /* Space below image */
+        max-width: 100%; /* Full width on smaller screens */
+        max-height: 360px;
+    }
+
+    .text-content {
+        min-width: 100%; /* Full width */
+        margin-bottom: 20px; /* Space below text content */
+    }
+
+    .box-container {
+        bottom: -20px; /* Move container slightly up */
+        justify-content: space-evenly; /* Space images evenly */
+    }
+}
